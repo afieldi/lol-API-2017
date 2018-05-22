@@ -1,4 +1,5 @@
 function onpress(id) {
+    //hide stuff at first
     document.getElementById("Precision").style.visibility = 'hidden';
     document.getElementById("Precision").style.display = 'none';
 
@@ -13,7 +14,7 @@ function onpress(id) {
 
     document.getElementById("Inspiration").style.visibility = 'hidden';
     document.getElementById("Inspiration").style.display = 'none';
-
+    //show when image is clicked
     if(id == 'button0')
     {
         document.getElementById('Precision').style.visibility = 'visible';

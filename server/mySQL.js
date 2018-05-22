@@ -2,8 +2,8 @@ function SQL() {
     this.sql = require('mysql');
     this.connection = this.sql.createConnection({
         host: 'lolapi2017db.cgbnugcmne3f.us-west-1.rds.amazonaws.com',
-        user: 'arek7000',
-        password: 'fielding.',
+        user: '',
+        password: '',
         database: 'leaguedb',
         port: '3306'
     });

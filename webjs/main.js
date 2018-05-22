@@ -7,14 +7,7 @@ var currentRunesListG, currentRuneTreesG, advisedRunesListG, advisedRuneTreesG, 
 //
 socket.emit("getMatchHistory");
 socket.on("matchHistory", function(summonerData, gamesList, idList, currentRunesList, currentRuneTrees, advisedRunesList, advisedRuneTrees, champList, runeTree) {
-    /*document.getElementById("playerscontent0").style.visibility = 'visible';
-    document.getElementById("playerscontent1").style.visibility = 'visible';
-    document.getElementById("playerscontent2").style.visibility = 'visible';
-    document.getElementById("playerscontent3").style.visibility = 'visible';
-    document.getElementById("playerscontent4").style.visibility = 'visible';
-    document.getElementById("playerscontent5").style.visibility = 'visible';
-    document.getElementById("playerscontent6").style.visibility = 'visible';
-    document.getElementById("playerscontent7").style.visibility = 'visible';*/
+    //create base for the 7 game match history
     for(var i = 0; i < gamesList.length; i ++) {
         if(i > 7) break;
         document.getElementById("KDAcontent" + i + "-1").style.visibility = 'visible';
@@ -29,6 +22,7 @@ socket.on("matchHistory", function(summonerData, gamesList, idList, currentRunes
     advisedRuneTreesG = advisedRuneTrees;
     runeTreeG = runeTree;
     document.getElementById("nameplate").innerHTML = summonerData.name;
+    //add the background and the champ icon to each game block
     for(var i  in champList)
     {
         var id = "champcontent" + i + "-2";
@@ -280,7 +274,7 @@ socket.on("matchHistory", function(summonerData, gamesList, idList, currentRunes
         }
     }
 });
-
+//hide all content on html change
 socket.on("modifyHTML", function(data){
     document.getElementById("nameplate").innerHTML = data;
     document.getElementById("playerscontent0").style.visibility = 'hidden';
